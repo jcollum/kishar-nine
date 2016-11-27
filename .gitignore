@@ -43,3 +43,4 @@ android/app/libs
 # React
 ios/
 android/
+__tests__/
