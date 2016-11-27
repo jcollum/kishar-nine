@@ -1,16 +1,12 @@
 {
-  "name": "kalma-ten",
-  "version": "0.1.0",
+  "name": "kisharNine",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
-    "push": "git push ssh://git@bitbucket.org/kalmaTen/kalmaTen-app.git",
     "ios": "react-native run-ios    && react-native log-ios",
     "android": "react-native run-android  && react-native log-android",
-    "start-api": "node api/index.js | ./node_modules/.bin/bunyan -o short",
-    "start-mock-api": "MOCKDATA=1 node_modules/.bin/supervisor --watch api,api/routes,test/data/questions.yaml -e node,js,yaml -s -RV  api/index.js | ./node_modules/.bin/bunyan -o short ",
-    "start-mock-api-debug": "MOCKDATA=1 node --debug --inspect=7544 api/index.js  | ./node_modules/.bin/bunyan -o short "
-
+    "test": "jest"
   },
   "dependencies": {
     "react": "15.4.1",

@@ -12,6 +12,30 @@ import {
   View
 } from 'react-native';
 
+export default class kisharNine extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to Kishar Nine
+        </Text>
+        <Text style={styles.instructions}>
+          This is a sample app demonstrating use of React Native and Redux. 
+        </Text>
+
+
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -31,23 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class kalmaTen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
-AppRegistry.registerComponent('kalmaTen', () => kalmaTen);
+AppRegistry.registerComponent('kisharNine', () => kisharNine);
