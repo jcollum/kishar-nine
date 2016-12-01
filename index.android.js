@@ -13,24 +13,30 @@ import {
 } from 'react-native';
 
 export default class kisharNine extends Component {
+  _incremement() {
+      this.setState({count : ++this.state.count})
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Welcome to Kishar Nine
-      </Text>
-      <Text style={styles.instructions}>
-        This is a sample app demonstrating use of React Native and Redux.
-      </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+      return (
+          <View style={styles.container}>
+              <Text style={[
+                  styles.welcome, {
+                      marginBottom: 40
+                  }
+              ]}>
+                  Welcome to Kishar Nine
+              </Text>
+              <Text style={styles.instructions}>
+                  Simple Counter Example
+              </Text>
+              <Text style={styles.heading}>{this.state.count}</Text>
+              <TouchableHighlight underlayColor='lightskyblue' style={{margin: 40}} activeOpacity={20} onPress={() => {
+                  this._incremement()
+              }}><Text style={[styles.heading, {color: 'blue', marginTop: 0}]}>+</Text></TouchableHighlight>
+
+          </View>
+      );
   }
 }
 
