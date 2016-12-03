@@ -7,9 +7,11 @@ const styles = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold'
     },
+
     subheading: {
-        fontSize: 26,
+        fontSize: 22,
         marginTop: 10,
+        marginBottom: 10,
         color: '#111',
         fontWeight: 'bold'
     },
@@ -17,7 +19,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        padding: 20,
+        //alignItems: 'center',
         backgroundColor: '#F5FCFF'
     },
     welcome: {

@@ -8,35 +8,40 @@ import {
     Navigator
 } from 'react-native';
 import {styles} from './src/style'
-import MyScene from './src/scene/myScene.jsx.js'
+import Counter from './src/scene/counter.jsx.js'
+import Home from './src/scene/home.jsx.js'
+
+/*
+
+Navigation code is mostly from:
+https://medium.com/react-native-training/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.tpgzwxz0p
+
+*/
+
 
 export default class kisharNine extends Component {
     constructor(props) {
         super(props);
     }
 
-    render() {
-        return (
-            <Navigator style={{
-                marginTop: 60,
-                marginHorizontal: 20
-            }} initialRoute={{
-                title: 'My Initial Scene',
-                index: 0
-            }} renderScene={(route, navigator) => <MyScene title={route.title} onForward={() => {
-                const nextIndex = route.index + 1;
-                navigator.push({
-                    title: 'Scene ' + nextIndex,
-                    index: nextIndex
-                });
-            }} configureScene={() => FloatFromRight} onBack={() => {
-                if (route.index > 0) {
-                    navigator.pop();
-                }
-            }}/>}/>
-        )
+    renderScene(route, navigator) {
+        if (route.name == 'Counter') {
+            return <Counter navigator={navigator}/>
+        }
+         else {
+            return <Home navigator={navigator}/>
+        }
     }
 
+    render() {
+        return (<Navigator style={styles.container} initialRoute={{
+            name: "Home"
+        }} renderScene={this.renderScene} onBack={() => {
+            if (route.index > 0) {
+                navigator.pop();
+            }
+        }}/>)
+    }
 }
 
 AppRegistry.registerComponent('kisharNine', () => kisharNine);
