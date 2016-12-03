@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class kalmaTen extends Component {
+export default class kisharNine extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ export default class kalmaTen extends Component {
   }
 }
 
-AppRegistry.registerComponent('kalmaTen', () => kalmaTen);
+AppRegistry.registerComponent('kisharNine', () => kisharNine);
