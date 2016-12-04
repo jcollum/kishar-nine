@@ -20,9 +20,8 @@ export default class kisharNine extends Component {
           Welcome to Kishar Nine
         </Text>
         <Text style={styles.instructions}>
-          This is a sample app demonstrating use of React Native and Redux. 
+          This is a sample app demonstrating use of React Native and Redux.
         </Text>
-
 
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -54,24 +53,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-AppRegistry.registerComponent('kisharNine', () => kisharNine);
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Kishar Nine in React Native!
-        </Text>
-        <Text style={styles.instructions}>
-        This is most basic version of the app. See the README file for an explanation of this project's structure. 
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
 
 AppRegistry.registerComponent('kisharNine', () => kisharNine);
