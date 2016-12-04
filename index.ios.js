@@ -39,7 +39,7 @@ export default class kisharNine extends Component {
           Welcome to Kishar Nine in React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+        This is most basic version of the app. See the README file for an explanation of this project's structure. 
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
