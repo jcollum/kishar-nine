@@ -1,6 +1,6 @@
 {
   "name": "kishar-nine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
@@ -12,7 +12,6 @@
     "start-api": "node api/index.js | ./node_modules/.bin/bunyan -o short",
     "start-mock-api": "MOCKDATA=1 node_modules/.bin/supervisor --watch api,api/routes,test/data/questions.yaml -e node,js,yaml -s -RV  api/index.js | ./node_modules/.bin/bunyan -o short ",
     "start-mock-api-debug": "MOCKDATA=1 node --debug --inspect=7544 api/index.js  | ./node_modules/.bin/bunyan -o short "
-
   },
   "dependencies": {
     "react": "15.4.1",
