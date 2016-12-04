@@ -7,6 +7,32 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 
+const styles = StyleSheet.create({
+    heading: {
+        fontSize: 30,
+        marginTop: 10,
+        color: '#000',
+        fontWeight: 'bold'
+    },
+
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF'
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10
+    },
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5
+    }
+});
+
 export default class kisharNine extends Component {
     constructor(props) {
         super(props);
@@ -41,49 +67,5 @@ export default class kisharNine extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    heading: {
-        fontSize: 30,
-        marginTop: 10,
-        color: '#000',
-        fontWeight: 'bold'
-    },
-
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5
-    }
-});
-
-AppRegistry.registerComponent('kisharNine', () => kisharNine);
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Kishar Nine in React Native!
-        </Text>
-        <Text style={styles.instructions}>
-        This is most basic version of the app. See the README file for an explanation of this project's structure. 
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
 
 AppRegistry.registerComponent('kisharNine', () => kisharNine);
