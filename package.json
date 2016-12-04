@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
+    "test": "jest",
     "push": "git push ssh://git@bitbucket.org/kalmaTen/kalmaTen-app.git",
     "ios": "react-native run-ios",
     "ios-logged": "react-native run-ios  && react-native log-ios",

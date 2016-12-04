@@ -1,3 +1,11 @@
+
+temp/
+
+
+#
+# defaults from react native init
+#
+
 # OSX
 #
 .DS_Store
@@ -39,8 +47,3 @@ buck-out/
 \.buckd/
 android/app/libs
 *.keystore
-
-# React
-ios/
-android/
-__tests__/
