@@ -1,5 +1,10 @@
+temp/
 etc/version.sh
 
+
+#
+# defaults from react native init
+#
 
 # OSX
 #
@@ -42,8 +47,3 @@ buck-out/
 \.buckd/
 android/app/libs
 *.keystore
-
-# React
-ios/
-android/
-__tests__/

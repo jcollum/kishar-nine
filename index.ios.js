@@ -56,3 +56,22 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('kisharNine', () => kisharNine);
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to Kishar Nine in React Native!
+        </Text>
+        <Text style={styles.instructions}>
+        This is most basic version of the app. See the README file for an explanation of this project's structure. 
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('kisharNine', () => kisharNine);
