@@ -1,12 +1,13 @@
 {
-  "name": "kisharNine",
-  "version": "0.0.1",
+  "name": "kishar-nine",
+  "version": "0.1.7",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
-    "ios": "react-native run-ios    && react-native log-ios",
-    "android": "react-native run-android  && react-native log-android",
-    "test": "jest"
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "ios-logged": "react-native run-ios  && react-native log-ios",
+    "android": "react-native run-android  && react-native log-android"
   },
   "dependencies": {
     "react": "15.4.1",

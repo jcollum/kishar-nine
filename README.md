@@ -6,6 +6,10 @@ The app is organized into branches.
 `01-simple-counter`: a simple counter on the index page that counts up when clicked
 `02-routing`: added in a router, moved simple counter to a new view
 
+`01-simple-counter`: a simple counter on the index page that counts up when clicked
+
+`02-routing`: added in a router, moved simple counter to a new view
+
 ### Getting going
 1. clone the repo
 1. cd into new repo directory
