@@ -1,25 +1,33 @@
 {
-  "name": "kishar-nine",
-  "version": "0.1.8",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
-    "test": "jest",
-    "ios": "react-native run-ios",
-    "ios-logged": "react-native run-ios  && react-native log-ios",
-    "android": "react-native run-android  && react-native log-android"
-  },
-  "dependencies": {
-    "react": "15.4.1",
-    "react-native": "0.38.0"
-  },
-  "jest": {
-    "preset": "react-native"
-  },
-  "devDependencies": {
-    "babel-jest": "17.0.2",
-    "babel-preset-react-native": "1.9.0",
-    "jest": "17.0.3",
-    "react-test-renderer": "15.4.1"
-  }
+    "name": "kishar-nine",
+    "version": "0.1.8",
+    "private": true,
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
+        "test": "jest",
+        "ios": "react-native run-ios",
+        "ios-logged": "react-native run-ios  && react-native log-ios",
+        "android": "react-native run-android  && react-native log-android"
+    },
+    "dependencies": {
+        "react": "15.4.1",
+        "react-native": "0.38.0",
+        "react-redux": "~4.4.6",
+        "redux": "~3.6.0",
+        "redux-thunk": "~2.1.0"
+    },
+    "jest": {
+       "preset": "react-native",
+        "globals": {
+            "__DEV__": true
+        },
+        "testRegex": "./test/.*.js$",
+        "rootDir": "."
+    },
+    "devDependencies": {
+        "babel-jest": "17.0.2",
+        "babel-preset-react-native": "1.9.0",
+        "jest": "17.0.3",
+        "react-test-renderer": "15.4.1"
+    }
 }
