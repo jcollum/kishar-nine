@@ -1,71 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
+import {
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    TouchableHighlight,
+    Navigator
+} from 'react-native';
+import {styles} from './src/styles'
+import Counter from './src/scenes/counter'
+import Home from './src/scenes/home'
+import Material from './src/scenes/material'
 
-const styles = StyleSheet.create({
-    heading: {
-        fontSize: 30,
-        marginTop: 10,
-        color: '#000',
-        fontWeight: 'bold'
-    },
+import {Router, Scene} from 'react-native-router-flux';
 
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5
-    }
-});
+/*
+Navigation code is mostly from:
+https://medium.com/react-native-training/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.tpgzwxz0p
+*/
 
 export default class kisharNine extends Component {
     constructor(props) {
         super(props);
-        this.state = ({count: 1});
-
-    }
-
-    _incremement() {
-        this.setState({count : ++this.state.count})
     }
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={[
-                    styles.welcome, {
-                        marginBottom: 40
-                    }
-                ]}>
-                    Welcome to Kishar Nine
-                </Text>
-                <Text style={styles.instructions}>
-                    Simple Counter Example
-                </Text>
-                <Text style={styles.heading}>{this.state.count}</Text>
-                <TouchableHighlight underlayColor='lightskyblue' style={{margin: 40}} activeOpacity={20} onPress={() => {
-                    this._incremement()
-                }}><Text style={[styles.heading, {color: 'blue', marginTop: 0}]}>+</Text></TouchableHighlight>
-
-            </View>
-        );
+            <Router>
+                <Scene key="root">
+                    <Scene key="counter" component={Counter} title="Counter"/>
+                    <Scene key="home" component={Home} title="Home" initial={true}/>
+                    <Scene key="material" component={Material} title="Material" />
+                </Scene>
+            </Router>
+        )
     }
 }
-
 
 AppRegistry.registerComponent('kisharNine', () => kisharNine);
