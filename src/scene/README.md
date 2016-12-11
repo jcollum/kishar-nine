@@ -1,3 +1,0 @@
-## scene
-
-For Scene components
