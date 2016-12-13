@@ -27,10 +27,10 @@ export default class kisharNine extends Component {
     render() {
         return (
             <Router>
-                <Scene key="root">
+                <Scene key="root" style={{paddingTop: 60, padding: 20}}>
                     <Scene key="counter" component={Counter} title="Counter"/>
                     <Scene key="home" component={Home} title="Home" initial={true}/>
-                    <Scene key="material" component={Material} title="Material" />
+                    <Scene key="material" component={Material} title="Material Design Samples" />
                 </Scene>
             </Router>
         )
