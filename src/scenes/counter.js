@@ -40,25 +40,12 @@ export class Counter extends Component {
         this.state = store.getState();
     }
 
-    // _incremement() {
-    //     debugger;
-    //     this.props.dispatch({type: actionTypes.increment});
-    //     console.log(this.state);
-    //     debugger;
-    // }
-    //
-    // _decremement() {
-    //     this.props.dispatch({type: actionTypes.decrement});
-    //     console.log(this.state);
-    // }
-    //<IncrDecr symbol="+" onPress={this.props.onIncrementClick}/>
-    //<IncrDecr symbol="-" onPress={this.props.onDecrementClick}/>
-    render() {
+     render() {
         return (
             <View>
                 <Text style={styles.subheading}>{this.props.title}</Text>
                 <TouchableHighlight style={[
-                    styles.button, {
+                    styles.highlightedButton, {
                         margin: 20
                     }
                 ]} onPress={this.props.onIncrementClick}>
@@ -67,12 +54,12 @@ export class Counter extends Component {
 
                 <Text style={[
                     styles.heading, {
-                        margin: 50
+                      marginLeft: 40
                     }
                 ]}>{this.props.count}</Text>
 
                 <TouchableHighlight style={[
-                    styles.button, {
+                    styles.highlightedButton, {
                         margin: 20
                     }
                 ]} onPress={this.props.onDecrementClick}>
@@ -81,12 +68,13 @@ export class Counter extends Component {
 
                 <TouchableHighlight style={[
                     styles.button, {
-                        marginHorizontal: 20
+                        marginHorizontal: 20,
+                        marginTop: 40
                     }
                 ]} onPress={Actions.home}>
                     <Text style={styles.white}>Home</Text>
                 </TouchableHighlight>
-              
+
             </View>
         )
     }

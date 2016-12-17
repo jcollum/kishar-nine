@@ -26,15 +26,26 @@ const styles = StyleSheet.create({
     },
 
     white: {
-      color: "#FFF"
+        color: "#FFF"
     },
 
     button: {
-      borderRadius: 5,
+        borderRadius: 5,
+        width: 100,
+        padding: 20,
+        backgroundColor: "#1286AF",
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10
+        , marginTop: 20
+    },
+
+    highlightedButton: {
+        borderRadius: 5,
         width: 100,
         height: 30,
         padding: 10,
-        backgroundColor: "#1286AF",
+        backgroundColor: "#F4BC41",
         alignItems: 'center',
         justifyContent: 'center',
         margin: 3

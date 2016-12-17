@@ -15,7 +15,9 @@ export default class Material extends Component {
     render() {
         return (
             <View>
-                <Text style={styles.subheading}>{this.props.title}</Text>
+            <Text style={styles.subheading}>{this.props.title}</Text>
+                <Text>(Nothing here yet)</Text>
+
                 <TouchableHighlight style={[
                     styles.button, {
                         marginHorizontal: 20
