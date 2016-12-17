@@ -69,7 +69,7 @@ export class Counter extends Component {
                     styles.heading, {
                         margin: 50
                     }
-                ]}>{this.props.count || 0}</Text>
+                ]}>{this.props.count}</Text>
 
                 <TouchableHighlight style={[
                     styles.button, {
@@ -86,16 +86,14 @@ export class Counter extends Component {
                 ]} onPress={Actions.home}>
                     <Text style={styles.white}>Home</Text>
                 </TouchableHighlight>
-                <Text>{JSON.stringify(this.state)}</Text>
-                <Text>{JSON.stringify(this.props)}</Text>
-
+              
             </View>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return {count: state.count}
+    return {count: state.counter.count}
 }
 
 const mapDispatchToProps = (dispatch) => {
