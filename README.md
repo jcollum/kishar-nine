@@ -3,12 +3,12 @@
 The app is organized into branches.
 
 `00-basic-setup`: react native init, basic setup; file system and README files to explain what's in the folders
-`01-simple-counter`: a simple counter on the index page that counts up when clicked
-`02-routing`: added in a router, moved simple counter to a new view
 
 `01-simple-counter`: a simple counter on the index page that counts up when clicked
 
 `02-routing`: added in a router, moved simple counter to a new view
+
+`03-redux-counter`: brought redux and react-native-router-flux into the project, got counter working with redux
 
 ### Getting going
 1. clone the repo
