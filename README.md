@@ -1,5 +1,7 @@
 ## React Native Redux sample project
 
+This is a sample app intended to show the growth of an app as it adds complexity. It is not intended to demonstrate best practices since I am just learning the React Native ecosystem, therefore I don't know what they are.
+
 The app is organized into branches.
 
 `00-basic-setup`: react native init, basic setup; file system and README files to explain what's in the folders
@@ -9,6 +11,8 @@ The app is organized into branches.
 `02-routing`: added in a router, moved simple counter to a new view
 
 `03-redux-counter`: brought redux and react-native-router-flux into the project, got counter working with redux
+
+`04-asynch-counter`: added asynch behavior into the counter, following this guide.http://redux.js.org/docs/advanced/AsyncActions.html`
 
 ### Getting going
 1. clone the repo
