@@ -1,6 +1,6 @@
 {
   "name": "kishar-nine",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
@@ -10,6 +10,7 @@
     "android": "react-native run-android  && react-native log-android"
   },
   "dependencies": {
+    "lodash": "~4.17.2",
     "react": "15.4.1",
     "react-native": "~0.39.1",
     "react-native-router-flux": "~3.37.0",

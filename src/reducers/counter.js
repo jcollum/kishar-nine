@@ -19,6 +19,18 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 count: state.count - 1
             };
+        case actions.busy:
+            console.log("busy...");
+            return {
+                ...state,
+                busy: true
+            };
+        case actions.done:
+            console.log("done!");
+            return {
+                ...state,
+                busy: false
+            };
 
         default:
             return state;
