@@ -14,6 +14,8 @@ The app is organized into branches.
 
 `04-asynch-counter`: added asynch behavior into the counter, following this guide.http://redux.js.org/docs/advanced/AsyncActions.html`
 
+`05-testing`: added in Jest tests
+
 ### Getting going
 1. clone the repo
 1. cd into new repo directory
