@@ -16,6 +16,8 @@ The app is organized into branches.
 
 `05-testing`: added in Jest tests
 
+`06-material-elements`: added in some material samples 
+
 ### Getting going
 1. clone the repo
 1. cd into new repo directory

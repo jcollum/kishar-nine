@@ -25,7 +25,7 @@ export default class Root extends Component {
                     }}>
                         <Scene key="counter" component={Counter} title="Counter"/>
                         <Scene key="home" component={Home} title="Home" initial={true}/>
-                        <Scene key="material" component={Material} title="Material Design Samples"/>
+                        <Scene key="material" component={Material} title="Material"/>
                     </Scene>
                 </Router>
             </Provider>
