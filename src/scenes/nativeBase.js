@@ -2,8 +2,13 @@ import React, {Component, PropTypes} from 'react';
 import {View, Text, TouchableHighlight, Linking} from 'react-native';
 import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
-import {Container, Content, Button} from 'native-base';
+import {Container, Content, Button, Icon} from 'native-base';
 
+localStyle = {
+    button: {
+        margin: 5
+    }
+}
 export default class NativeBase extends Component {
 
     constructor(props) {
@@ -25,24 +30,20 @@ export default class NativeBase extends Component {
     render() {
         return (
             <Container>
-                <Content>
-                    <Button block>
+                <Content marginTop={20}>
+                    <Button style={localStyle.button} block>
                         Primary
                     </Button>
-                    <Button block success>
-                        Success
-                    </Button>
-                    <Button block info>
-                        Info
-                    </Button>
-                    <Button block warning>
-                        Warning
-                    </Button>
-                    <Button block danger>
+
+                    <Button rounded style={localStyle.button} danger>
                         Danger
                     </Button>
 
-                    <Button block style={{
+                    <Button danger>
+                        <Icon name='ios-close-circle'/>
+                    </Button>
+
+                    <Button style={localStyle.button} block style={{
                         marginTop: 40
                     }} onPress={Actions.home}>Home</Button>
 
