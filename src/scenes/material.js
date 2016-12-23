@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Linking} from 'react-native';
 import {mdl, MKProgress, MKTextField} from 'react-native-material-kit';
 import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
@@ -40,7 +40,14 @@ export default class Material extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{
+                marginTop: 30
+            }}>
+                <Text style={{
+                    color: 'blue'
+                }} onPress={() => Linking.openURL('https://github.com/xinthink/react-native-material-kit')}>
+                    RNMK Library (Github)
+                </Text>
 
                 <RaisedButton width={120} style={{
                     marginVertical: 20
