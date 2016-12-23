@@ -12,11 +12,13 @@ The app is organized into branches.
 
 `03-redux-counter`: brought redux and react-native-router-flux into the project, got counter working with redux
 
-`04-asynch-counter`: added asynch behavior into the counter, following this guide.http://redux.js.org/docs/advanced/AsyncActions.html`
+`04-asynch-counter`: added asynch behavior into the counter, following this guide: http://redux.js.org/docs/advanced/AsyncActions.html`
 
-`05-testing`: added in Jest tests
+`05-testing`: added in Jest tests (these are not working, bug between Jest and RN 0.39)
 
-`06-material-elements`: added in some material samples 
+`06-material-elements`: added in some material samples
+
+`07-nativebase`: demonstrates use of native-base (http://nativebase.io/)  
 
 ### Getting going
 1. clone the repo
@@ -24,6 +26,7 @@ The app is organized into branches.
 1. `npm install`
 1. `npm start` -- this will start the packager
 1. open a new terminal window
+1. check out a branch if you want to see a specific feature
 1. start the app in IOS or Android with `npm run ios` or `npm run android`
 1. if it all goes well when you start you should see this (if you launch both):
 
