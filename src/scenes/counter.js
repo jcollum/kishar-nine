@@ -52,7 +52,7 @@ export class Counter extends Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.content}>
                 <Text style={styles.subheading}>{this.props.title}</Text>
                 <IncrDecr text="+ (async)" onPress={this.props.onAsyncIncrementClick}/>
                 <IncrDecr text="+" onPress={this.props.onIncrementClick}/>

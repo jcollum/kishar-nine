@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF'
     },
 
+    content: {
+      margin: 20
+    },
+
     white: {
         color: "#FFF"
     },

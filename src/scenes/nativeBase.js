@@ -2,7 +2,17 @@ import React, {Component, PropTypes} from 'react';
 import {View, Text, TouchableHighlight, Linking} from 'react-native';
 import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
-import {Container, Content, Button, Icon} from 'native-base';
+import {
+    Container,
+    Content,
+    Button,
+    Icon,
+    Footer,
+    FooterTab,
+    Badge,
+    InputGroup,
+    Input
+} from 'native-base';
 
 localStyle = {
     button: {
@@ -17,37 +27,74 @@ export default class NativeBase extends Component {
 
     componentDidMount() {}
 
-    // static get defaultProps() {
-    //     return {title: 'Home Screen'};
-    // }
-
-    /*
-    <Button block info width={80} text="Home" style={{
-        marginTop: 40
-    }} />
-    */
+    static get defaultProps() {
+        return {title: 'Home Screen'};
+    }
 
     render() {
         return (
-            <Container>
-                <Content marginTop={20}>
-                    <Button style={localStyle.button} block>
-                        Primary
-                    </Button>
+            <Container >
+                <Content style={[
+                    styles.content, {
+                        flex: 1,
+                        flexDirection: 'row'
+                    }
+                ]} contentContainerStyle={{
+                    justifyContent: 'space-between'
+                }}>
+                    <View style={{
+                        flex: 1,
+                        flexDirection: 'column'
+                    }}>
+                        <View>
+                            <Text>Buttons</Text>
+                        </View>
+                        <View style={{
+                            flex: 1,
+                            flexDirection: 'row', alignItems: 'center' 
+                        }}>
+                            <Button style={localStyle.button} block>
+                                Primary
+                            </Button>
 
-                    <Button rounded style={localStyle.button} danger>
-                        Danger
-                    </Button>
+                            <Button rounded style={localStyle.button} danger>
+                                Danger
+                            </Button>
 
-                    <Button danger>
-                        <Icon name='ios-close-circle'/>
-                    </Button>
+                            <Button danger>
+                                <Icon name='ios-close-circle'/>
+                            </Button>
+                        </View>
 
-                    <Button style={localStyle.button} block style={{
-                        marginTop: 40
-                    }} onPress={Actions.home}>Home</Button>
+                    </View>
 
+                    <InputGroup borderType='regular'>
+                        <Input style={{
+                            width: 200,
+                            height: 200
+                        }} multiline={true} placeholder='Multiline Text Input'/>
+                    </InputGroup>
                 </Content>
+
+                <Footer >
+                    <FooterTab>
+                        <Button disabled>
+                            <Badge>2</Badge>
+                            Apps
+                            <Icon name='ios-apps-outline'/>
+                        </Button>
+
+                        <Button disabled>
+                            Navigate
+                            <Icon name='ios-compass'/>
+                        </Button>
+                        <Button active onPress={Actions.home}>
+                            Home
+                            <Icon name='ios-home'/>
+                        </Button>
+                    </FooterTab>
+                </Footer>
+
             </Container>
         );
     }

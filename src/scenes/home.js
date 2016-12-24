@@ -22,7 +22,7 @@ export default class Home extends Component {
     render() {
         return (
             <Container>
-                <Content>
+                <Content style={styles.content}>
                     <View>
                         <Text style={styles.heading}>Welcome to Kishar Nine.</Text>
                         <Text style={styles.subheading}>This is the {this.props.title}

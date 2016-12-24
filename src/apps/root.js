@@ -22,7 +22,7 @@ export default class Root extends Component {
                 <Router>
                     <Scene key="root" style={{
                         paddingTop: 60,
-                        padding: 20
+                        padding: 0
                     }}>
                         <Scene key="counter" component={Counter} title="Counter"/>
                         <Scene key="home" component={Home} title="Home" initial={true}/>

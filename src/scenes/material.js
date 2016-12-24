@@ -40,9 +40,7 @@ export default class Material extends Component {
 
     render() {
         return (
-            <View style={{
-                marginTop: 30
-            }}>
+            <View style={[styles.content]}>
                 <Text style={{
                     color: 'blue'
                 }} onPress={() => Linking.openURL('https://github.com/xinthink/react-native-material-kit')}>
