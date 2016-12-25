@@ -11,7 +11,12 @@ import {
     FooterTab,
     Badge,
     InputGroup,
-    Input,DeckSwiper, Card, CardItem, Thumbnail, Image
+    Input,
+    DeckSwiper,
+    Card,
+    CardItem,
+    Thumbnail,
+    Image
 } from 'native-base';
 
 localStyle = {
@@ -36,6 +41,30 @@ const cards = [
     }
 ];
 
+/*
+<Card style={{
+    elevation: 3
+}}>
+    <CardItem>
+        <Thumbnail source={item.image}/>
+        <Text>{item.text}</Text>
+        <Text note>NativeBase</Text>
+    </CardItem>
+    <CardItem>
+        <Image style={{
+            resizeMode: 'cover',
+            width: null
+        }} source={item.image}/>
+    </CardItem>
+    <CardItem>
+        <Icon name="ios-heart" style={{
+            color: '#ED4A6A'
+        }}/>
+        <Text>{item.name}</Text>
+    </CardItem>
+</Card>
+
+*/
 
 export default class NativeBase extends Component {
 
@@ -69,7 +98,8 @@ export default class NativeBase extends Component {
                         </View>
                         <View style={{
                             flex: 1,
-                            flexDirection: 'row', alignItems: 'center'
+                            flexDirection: 'row',
+                            alignItems: 'center'
                         }}>
                             <Button style={localStyle.button} block>
                                 Primary
@@ -83,41 +113,23 @@ export default class NativeBase extends Component {
                                 <Icon name='ios-close-circle'/>
                             </Button>
                         </View>
-
                     </View>
-
-                    <InputGroup borderType='regular'>
-                        <Input style={{
-                            width: 200,
-                            height: 200
-                        }} multiline={true} placeholder='Multiline Text Input'/>
-                    </InputGroup>
-
-<View>
-<DeckSwiper
-                        dataSource={cards}
-                        renderItem={ item =>
-
-                            <Card style={{ elevation: 3 }}>
-                                <CardItem>
-                                    <Thumbnail source={item.image} />
-                                    <Text>{item.text}</Text>
-                                    <Text note>NativeBase</Text>
-                                </CardItem>
-                                <CardItem>
-                                    <Image style={{ resizeMode: 'cover', width: null }} source={item.image} />
-                                </CardItem>
-                                <CardItem>
-                                    <Icon name="ios-heart" style={{ color: '#ED4A6A' }} />
-                                    <Text>{item.name}</Text>
-                                </CardItem>
-                            </Card>
-                        
-
-                      } />
-
-</View>
-
+                    <View flex>
+                        <DeckSwiper dataSource={cards} renderItem={(item) => {
+                            console.log(item);
+                            return (
+                                <Text flex style={{flexDirection:'row'}}>{item.text}</Text>
+                            )
+                        }}/>
+                    </View>
+                    <View flex>
+                        <InputGroup borderType='regular'>
+                            <Input style={{
+                                width: 200,
+                                height: 200
+                            }} multiline={true} placeholder='Multiline Text Input'/>
+                        </InputGroup>
+                    </View>
                 </Content>
 
                 <Footer >
