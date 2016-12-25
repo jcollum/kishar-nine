@@ -11,7 +11,7 @@ import {
     FooterTab,
     Badge,
     InputGroup,
-    Input
+    Input,DeckSwiper, Card, CardItem, Thumbnail, Image
 } from 'native-base';
 
 localStyle = {
@@ -19,6 +19,24 @@ localStyle = {
         margin: 5
     }
 }
+
+const cards = [
+    {
+        text: 'Cat',
+        name: 'Cat',
+        image: require('../resources/dreamstimefree_16717102_small.png')
+    }, {
+        text: 'Puppies',
+        name: 'Puppies',
+        image: require('../resources/dreamstimefree_26811888_small.png')
+    }, {
+        text: 'Goats',
+        name: 'Goats',
+        image: require('../resources/dreamstimefree_9628921_small.png')
+    }
+];
+
+
 export default class NativeBase extends Component {
 
     constructor(props) {
@@ -51,7 +69,7 @@ export default class NativeBase extends Component {
                         </View>
                         <View style={{
                             flex: 1,
-                            flexDirection: 'row', alignItems: 'center' 
+                            flexDirection: 'row', alignItems: 'center'
                         }}>
                             <Button style={localStyle.button} block>
                                 Primary
@@ -74,6 +92,32 @@ export default class NativeBase extends Component {
                             height: 200
                         }} multiline={true} placeholder='Multiline Text Input'/>
                     </InputGroup>
+
+<View>
+<DeckSwiper
+                        dataSource={cards}
+                        renderItem={ item =>
+
+                            <Card style={{ elevation: 3 }}>
+                                <CardItem>
+                                    <Thumbnail source={item.image} />
+                                    <Text>{item.text}</Text>
+                                    <Text note>NativeBase</Text>
+                                </CardItem>
+                                <CardItem>
+                                    <Image style={{ resizeMode: 'cover', width: null }} source={item.image} />
+                                </CardItem>
+                                <CardItem>
+                                    <Icon name="ios-heart" style={{ color: '#ED4A6A' }} />
+                                    <Text>{item.name}</Text>
+                                </CardItem>
+                            </Card>
+                        
+
+                      } />
+
+</View>
+
                 </Content>
 
                 <Footer >
