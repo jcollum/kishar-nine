@@ -25,21 +25,7 @@ localStyle = {
     }
 }
 
-const cards = [
-    {
-        text: 'Cat',
-        name: 'Cat',
-        image: require('../resources/dreamstimefree_16717102_small.png')
-    }, {
-        text: 'Puppies',
-        name: 'Puppies',
-        image: require('../resources/dreamstimefree_26811888_small.png')
-    }, {
-        text: 'Goats',
-        name: 'Goats',
-        image: require('../resources/dreamstimefree_9628921_small.png')
-    }
-];
+
 
 /*
 <Card style={{
@@ -114,14 +100,7 @@ export default class NativeBase extends Component {
                             </Button>
                         </View>
                     </View>
-                    <View flex>
-                        <DeckSwiper dataSource={cards} renderItem={(item) => {
-                            console.log(item);
-                            return (
-                                <Text flex style={{flexDirection:'row'}}>{item.text}</Text>
-                            )
-                        }}/>
-                    </View>
+
                     <View flex>
                         <InputGroup borderType='regular'>
                             <Input style={{

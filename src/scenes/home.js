@@ -1,8 +1,25 @@
+/* @flow */
+
 import React, {Component, PropTypes} from 'react';
 import {View, Text, TouchableHighlight} from 'react-native';
 import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
 import {Container, Content, Card, CardItem} from 'native-base';
+
+class SimpleButton extends Component {
+
+    render() {
+        return (
+            <TouchableHighlight style={[
+                styles.button, {
+                    marginHorizontal: 20
+                }
+            ]} onPress={this.props.action}>
+                <Text style={styles.white}>{this.props.text}</Text>
+            </TouchableHighlight>
+        );
+    }
+}
 
 export default class Home extends Component {
     constructor(props) {
@@ -23,34 +40,25 @@ export default class Home extends Component {
         return (
             <Container>
                 <Content style={styles.content}>
-                    <View>
-                        <Text style={styles.heading}>Welcome to Kishar Nine.</Text>
-                        <Text style={styles.subheading}>This is the {this.props.title}
-                            screen</Text>
-                        <Text style={{
-                            marginVertical: 20
-                        }}>Here are some samples:</Text>
-                        <TouchableHighlight style={[
-                            styles.button, {
-                                marginHorizontal: 20
-                            }
-                        ]} onPress={Actions.counter}>
-                            <Text style={styles.white}>Counter</Text>
-                        </TouchableHighlight>
-                        <TouchableHighlight style={[
-                            styles.button, {
-                                marginHorizontal: 20
-                            }
-                        ]} onPress={Actions.material}>
-                            <Text style={styles.white}>RNMK (Material)</Text>
-                        </TouchableHighlight>
-                        <TouchableHighlight style={[
-                            styles.button, {
-                                marginHorizontal: 20
-                            }
-                        ]} onPress={Actions.nativeBase}>
-                            <Text style={styles.white}>Native Base</Text>
-                        </TouchableHighlight>
+                    <View flex style={{
+                        flexDirection: "column"
+                    }}>
+                        <View>
+                            <Text style={styles.heading}>Welcome to Kishar Nine.</Text>
+                            <Text style={styles.subheading}>This is the {this.props.title}
+                                screen</Text>
+                        </View>
+
+                        <View>
+                            <Text style={{
+                                marginVertical: 20
+                            }}>Here are some samples:</Text>
+                        </View>
+
+                        <SimpleButton text="Counter" action={Actions.counter}/>
+                        <SimpleButton text="RNMK (Material)" action={Actions.material}/>
+                        <SimpleButton text="Native Base" action={Actions.nativeBase}/>
+                        <SimpleButton text="Native Base Deck Swiper" action={Actions.deckSwiper}/>
                     </View>
                 </Content>
             </Container>
