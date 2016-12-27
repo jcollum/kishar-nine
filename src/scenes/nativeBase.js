@@ -7,6 +7,7 @@ import {
     Content,
     Button,
     Icon,
+    Fab,
     Footer,
     FooterTab,
     Badge,
@@ -16,6 +17,7 @@ import {
     Card,
     CardItem,
     Thumbnail,
+    Picker,
     Image
 } from 'native-base';
 
@@ -25,43 +27,30 @@ localStyle = {
     }
 }
 
-
-
-/*
-<Card style={{
-    elevation: 3
-}}>
-    <CardItem>
-        <Thumbnail source={item.image}/>
-        <Text>{item.text}</Text>
-        <Text note>NativeBase</Text>
-    </CardItem>
-    <CardItem>
-        <Image style={{
-            resizeMode: 'cover',
-            width: null
-        }} source={item.image}/>
-    </CardItem>
-    <CardItem>
-        <Icon name="ios-heart" style={{
-            color: '#ED4A6A'
-        }}/>
-        <Text>{item.name}</Text>
-    </CardItem>
-</Card>
-
-*/
+const Item = Picker.Item;
 
 export default class NativeBase extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            fabActive: true,
+            selectedItem: undefined,
+            selected1: 'key1',
+            results: {
+                items: []
+            }
+        };
     }
 
     componentDidMount() {}
 
     static get defaultProps() {
-        return {title: 'Home Screen'};
+        return {title: 'Home Screen', fabActive: false};
+    }
+
+    onValueChange(value : string) {
+        this.setState({selected1: value});
     }
 
     render() {
@@ -101,17 +90,58 @@ export default class NativeBase extends Component {
                         </View>
                     </View>
 
+                    <Fab active={this.state.fabActive} direction="right" style={{
+                        backgroundColor: '#5067FF'
+                    }} position="bottomLeft" onPress={() => this.setState({
+                        fabActive: !this.state.fabActive
+                    })}>
+                        <Icon name="md-share"/>
+                        <Button style={{
+                            backgroundColor: '#34A34F'
+                        }}>
+                            <Icon name="logo-whatsapp"/>
+                        </Button>
+                        <Button style={{
+                            backgroundColor: '#3B5998'
+                        }}>
+                            <Icon name="logo-facebook"/>
+                        </Button>
+                        <Button disabled style={{
+                            backgroundColor: '#DD5144'
+                        }}>
+                            <Icon name="ios-mail"/>
+                        </Button>
+                    </Fab>
+
                     <View flex>
                         <InputGroup borderType='regular'>
                             <Input style={{
                                 width: 200,
-                                height: 200
+                                height: 200,
+                                marginBottom: 50
                             }} multiline={true} placeholder='Multiline Text Input'/>
                         </InputGroup>
                     </View>
+
+                    <View flex style={{
+                        marginTop: 20
+                    }}>
+                        <Text>Your Favorite Animal (Picker widget):</Text>
+                        <Picker iosHeader="Select one" mode="dialog" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}>
+                            <Item label="Cats" value="key0"/>
+                            <Item label="Dogs" value="key1"/>
+                            <Item label="Birds" value="key2"/>
+                            <Item label="Elephants" value="key3"/>
+                        </Picker>
+                    </View>
+
+                    <View flex note="View block for the FAB button" style={{
+                        marginBottom: 50
+                    }}/>
+
                 </Content>
 
-                <Footer >
+                <Footer>
                     <FooterTab>
                         <Button disabled>
                             <Badge>2</Badge>

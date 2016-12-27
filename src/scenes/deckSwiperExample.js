@@ -44,7 +44,7 @@ export default class DeckSwiperExample extends Component {
                             <CardItem>
                                 <Thumbnail source={item.image}/>
                                 <Text>{item.title}</Text>
-                                <Text note>item.note</Text>
+                                <Text note>{item.note}</Text>
                             </CardItem>
                             <CardItem>
                                 <Image style={{
