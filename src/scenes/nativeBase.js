@@ -18,6 +18,7 @@ import {
     CardItem,
     Thumbnail,
     Picker,
+    H1, H2, H3,
     Image
 } from 'native-base';
 
@@ -68,6 +69,13 @@ export default class NativeBase extends Component {
                         flex: 1,
                         flexDirection: 'column'
                     }}>
+
+                    <Text style={{
+                        color: 'blue', marginBottom: 10
+                    }} onPress={() => Linking.openURL('http://nativebase.io/docs/v0.5.13/getting-started')}>
+                        NativeBase library
+                    </Text>
+
                         <View>
                             <Text>Buttons</Text>
                         </View>
@@ -116,15 +124,15 @@ export default class NativeBase extends Component {
                     <View flex>
                         <InputGroup borderType='regular'>
                             <Input style={{
-                                width: 200,
-                                height: 200,
+                                width: 300,
+                                height: 120,
                                 marginBottom: 50
                             }} multiline={true} placeholder='Multiline Text Input'/>
                         </InputGroup>
                     </View>
 
                     <View flex style={{
-                        marginTop: 20
+                        marginTop: 10
                     }}>
                         <Text>Your Favorite Animal (Picker widget):</Text>
                         <Picker iosHeader="Select one" mode="dialog" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}>
@@ -134,9 +142,13 @@ export default class NativeBase extends Component {
                             <Item label="Elephants" value="key3"/>
                         </Picker>
                     </View>
-
+<View >
+                    <H1>Top level heading</H1>
+                    <H2>Sub heading</H2>
+                    <H3>Sub sub heading</H3>
+</View>
                     <View flex note="View block for the FAB button" style={{
-                        marginBottom: 50
+                        marginBottom: 20
                     }}/>
 
                 </Content>
