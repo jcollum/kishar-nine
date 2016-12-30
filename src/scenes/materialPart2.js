@@ -7,8 +7,8 @@ import {RaisedButton} from './../components/raisedButton';
 
 import {MKButton, MKColor, MKTouchable, TickView} from 'react-native-material-kit';
 
-class CompName extends Component {
-    constructor() {
+export default class MaterialPart2 extends Component {
+    constructor(props) {
         super(props);
     }
     render() {

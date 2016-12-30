@@ -7,10 +7,6 @@ import {RaisedButton} from './../components/raisedButton';
 
 import {MKButton, MKColor, MKTouchable, TickView} from 'react-native-material-kit';
 
-TextfieldWithFloatingLabel = MKTextField.textfieldWithFloatingLabel().withPlaceholder('Number...').withStyle(styles.textfieldWithFloatingLabel).withTextInputStyle({flex: 1}).withFloatingLabelFont({fontSize: 10, fontStyle: 'italic', fontWeight: '200'}).withKeyboardType('numeric').build();
-
-const CustomTextfield = mdl.Textfield.textfield().withPlaceholder('Text…').withStyle(styles.textfield).withTintColor(MKColor.Lime).withTextInputStyle({color: MKColor.Orange}).build();
-
 export default class Material extends Component {
     constructor(props) {
         super(props);

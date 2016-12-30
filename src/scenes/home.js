@@ -62,7 +62,7 @@ export default class Home extends Component {
                             <Col sm={6} md={4} lg={3}>
                                 <SimpleButton text="Counter" action={Actions.counter}/>
                                 <SimpleButton text="RNMK (Material)" action={Actions.material}/>
-                                <SimpleButton text="RNMK (Material)" action={Actions.materialPart2}/>
+                                <SimpleButton text="RNMK (Material) Part 2" action={Actions.materialPart2}/>
                             </Col>
                             <Col sm={6} md={4} lg={3}>
                                 <SimpleButton text="Native Base" action={Actions.nativeBase}/>
