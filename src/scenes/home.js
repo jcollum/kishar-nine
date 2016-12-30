@@ -6,6 +6,8 @@ import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
 import {Container, Content, Card, CardItem} from 'native-base';
 
+import {Column as Col, Row} from 'react-native-flexbox-grid';
+
 class SimpleButton extends Component {
 
     render() {
@@ -40,6 +42,7 @@ export default class Home extends Component {
         return (
             <Container>
                 <Content style={styles.content}>
+
                     <View flex style={{
                         flexDirection: "column"
                     }}>
@@ -55,10 +58,17 @@ export default class Home extends Component {
                             }}>Here are some samples:</Text>
                         </View>
 
-                        <SimpleButton text="Counter" action={Actions.counter}/>
-                        <SimpleButton text="RNMK (Material)" action={Actions.material}/>
-                        <SimpleButton text="Native Base" action={Actions.nativeBase}/>
-                        <SimpleButton text="Native Base Deck Swiper" action={Actions.deckSwiper}/>
+                        <Row size={12}>
+                            <Col sm={6} md={4} lg={3}>
+                                <SimpleButton text="Counter" action={Actions.counter}/>
+                                <SimpleButton text="RNMK (Material)" action={Actions.material}/>
+                                <SimpleButton text="RNMK (Material)" action={Actions.materialPart2}/>
+                            </Col>
+                            <Col sm={6} md={4} lg={3}>
+                                <SimpleButton text="Native Base" action={Actions.nativeBase}/>
+                                <SimpleButton text="Native Base Deck Swiper" action={Actions.deckSwiper}/>
+                            </Col>
+                        </Row>
                     </View>
                 </Content>
             </Container>

@@ -10,6 +10,7 @@ import {styles} from '../styles'
 import Counter from '../scenes/counter'
 import Home from '../scenes/home'
 import Material from '../scenes/material'
+import MaterialPart2 from '../scenes/materialPart2'
 import NativeBase from '../scenes/nativeBase'
 import DeckSwiperExample from '../scenes/deckSwiperExample'
 
@@ -28,6 +29,7 @@ export default class Root extends Component {
                         <Scene key="counter" component={Counter} title="Counter"/>
                         <Scene key="home" component={Home} title="Home" initial={true}/>
                         <Scene key="material" component={Material} title="Material"/>
+                        <Scene key="material" component={MaterialPart2} title="Material Pt 2"/>
                         <Scene key="nativeBase" component={NativeBase} title="NativeBase Components"/>
                         <Scene key="deckSwiper" component={DeckSwiperExample} title="Deck Swiper"/>
                     </Scene>

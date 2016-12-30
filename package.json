@@ -16,6 +16,7 @@
     "native-base": "~0.5.18",
     "react": "15.4.1",
     "react-native": "~0.39.1",
+    "react-native-flexbox-grid": "~0.2.2",
     "react-native-material-kit": "~0.3.4",
     "react-native-router-flux": "~3.37.0",
     "react-native-vector-icons": "~3.0.0",
