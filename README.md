@@ -20,7 +20,7 @@ The app is organized into branches.
 
 `07-nativebase`: demonstrates use of native-base (http://nativebase.io/)
 
-`08-material-part2`: another set of material elements, toggles, switches and checkboxes    
+`08-material-part2`: another set of material elements: toggles, switches and checkboxes    
 
 ### Getting going
 1. clone the repo
