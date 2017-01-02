@@ -1,43 +1,45 @@
 {
-    "name": "kishar-nine",
-    "version": "0.7.0",
-    "private": true,
-    "scripts": {
-        "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
-        "test": "jest",
-        "ios": "react-native run-ios",
-        "ios-logged": "react-native run-ios  && react-native log-ios",
-        "android": "react-native run-android  && react-native log-android",
-        "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
-        "fullclean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i --silent"
-    },
-    "dependencies": {
-        "jest": "~18.1.0",
-        "lodash": "~4.17.2",
-        "native-base": "~0.5.18",
-        "react": "15.4.1",
-        "react-native": "~0.39.1",
-        "react-native-flexbox-grid": "~0.2.2",
-        "react-native-material-kit": "~0.3.4",
-        "react-native-router-flux": "~3.37.0",
-        "react-native-vector-icons": "~3.0.0",
-        "react-redux": "~4.4.6",
-        "redux": "~3.6.0",
-        "redux-thunk": "~2.1.0"
-    },
-    "jest": {
-        "preset": "react-native",
-        "testRegex": "./test/[^setup].*.js$",
-        "mocksPattern": "./test/mocks/.*.js$",
-        "transformIgnorePatterns": ["node_modules/(?!react-native|native-base|react-clone-referenced-element)"],
-        "setupFiles": [
-            "./test/setup.js"
-        ]
-    },
-    "devDependencies": {
-        "babel-jest": "17.0.2",
-        "babel-preset-react-native": "1.9.0",
-        "jest": "~18.0.0",
-        "react-test-renderer": "15.4.1"
-    }
+  "name": "kishar-nine",
+  "version": "0.8.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start #--port 9988",
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "ios-logged": "react-native run-ios  && react-native log-ios",
+    "android": "react-native run-android  && react-native log-android",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
+    "fullclean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i --silent"
+  },
+  "dependencies": {
+    "jest": "~18.1.0",
+    "lodash": "~4.17.2",
+    "native-base": "~0.5.18",
+    "react": "15.4.1",
+    "react-native": "~0.39.1",
+    "react-native-flexbox-grid": "~0.2.2",
+    "react-native-material-kit": "~0.3.4",
+    "react-native-router-flux": "~3.37.0",
+    "react-native-vector-icons": "~3.0.0",
+    "react-redux": "~4.4.6",
+    "redux": "~3.6.0",
+    "redux-thunk": "~2.1.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testRegex": "./test/[^setup].*.js$",
+    "mocksPattern": "./test/mocks/.*.js$",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|react-clone-referenced-element)"
+    ],
+    "setupFiles": [
+      "./test/setup.js"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
+    "jest": "~18.0.0",
+    "react-test-renderer": "15.4.1"
+  }
 }
