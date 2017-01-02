@@ -151,8 +151,13 @@ export default class NativeBase extends Component {
                         <H3>Sub sub heading</H3>
                     </View>
 
-                    <View style={{marginTop: 10, flexDirection: "row"}}>
-                    <H3 style={{marginRight: 5}}>Icons:</H3>
+                    <View style={{
+                        marginTop: 10,
+                        flexDirection: "row"
+                    }}>
+                        <H3 style={{
+                            marginRight: 5
+                        }}>Icons:</H3>
                         <Icon name='ios-home'/>
                         <Icon name='ios-menu' style={{
                             fontSize: 20,
