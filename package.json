@@ -9,7 +9,7 @@
     "ios-logged": "react-native run-ios  && react-native log-ios",
     "android": "react-native run-android  && react-native log-android",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
-    "fullclean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i --silent"
+    "fullclean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && yarn i --quiet"
   },
   "dependencies": {
     "jest": "~18.1.0",

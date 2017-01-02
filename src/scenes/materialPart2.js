@@ -1,5 +1,12 @@
 import React, {Component, PropTypes} from 'react';
-import {View, Text, TouchableHighlight, Linking} from 'react-native';
+import {
+    View,
+    Text,
+    TouchableHighlight,
+    Linking,
+    ScrollView,
+    Image
+} from 'react-native';
 //import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
 import {RaisedButton} from './../components/raisedButton';
@@ -13,9 +20,7 @@ styles = {
         marginTop: 10
     },
     view: {
-        backgroundColor: "#DDD",
-        margin: 5,
-        padding: 10
+        backgroundColor: "#DDD"
     },
     viewInner: {
         backgroundColor: "#AAA",
@@ -28,6 +33,9 @@ styles = {
     },
     toggleTextOn: {
         color: "blue"
+    },
+    fg: {
+        flexGrow: 1
     }
 }
 import {
@@ -38,24 +46,41 @@ import {
     MKTextField,
     MKIconToggle,
     MKCheckbox,
-    TickView
+    TickView,
+    getTheme
 } from 'react-native-material-kit';
 
 const TextfieldWithFloatingLabel = MKTextField.textfieldWithFloatingLabel().withPlaceholder('Type a number...').withStyle(styles.textfieldWithFloatingLabel).withTextInputStyle({flex: 1}).withFloatingLabelFont({fontSize: 10, fontStyle: 'italic', fontWeight: '200'}).withKeyboardType('numeric').build();
+
+const theme = getTheme();
 
 export default class MaterialPart2 extends Component {
     constructor(props) {
         super(props);
     }
     render() {
+
+        var base64Icon = 'http://www.getmdl.io/assets/demos/welcome_card.jpg';
+        var action = (
+            <Text>
+                My action</Text>
+        );
+        var menu = (
+            <MKIconToggle checked={true} onCheckedChange={this._onIconChecked} onPress={this._onIconClicked}>
+                <Text pointerEvents="none" style={styles.toggleTextOff}>Off</Text>
+                <Text state_checked={true} pointerEvents="none" style={[styles.toggleText, styles.toggleTextOn]}>On</Text>
+            </MKIconToggle>
+        );
+
         return (
-            <View style={[
-                styles.view, {
-                    marginTop: 20
-                }
-            ]}>
+            <ScrollView style={{
+                flexGrow: 1
+            }}>
+
                 {/* this textbox is messed up in this version of RNMK?  */}
-                <View>
+                <View style={{
+                    marginTop: 4
+                }}>
                     <View style={[styles.viewInner]}>
                         <MKTextField textInputStyle={{
                             flex: 1
@@ -88,15 +113,21 @@ export default class MaterialPart2 extends Component {
                         <MKCheckbox checked={true}/>
                         <Text>Email me a receipt</Text>
                     </View>
-                    <View style={styles.viewInner}>
-                        <Text>Do you like ice cream? (Text toggle)</Text>
+                    <View style={[{
+                            flexDirection: 'row',
+                            alignItems: 'center'
+                        }
+                    ]}>
+                        <Text>Do you like ice cream?</Text>
                         <MKIconToggle checked={true} onCheckedChange={this._onIconChecked} onPress={this._onIconClicked}>
                             <Text pointerEvents="none" style={styles.toggleTextOff}>OK</Text>
                             <Text state_checked={true} pointerEvents="none" style={[styles.toggleText, styles.toggleTextOn]}>No!</Text>
                         </MKIconToggle>
                     </View>
                 </View>
-            </View>
+
+                
+            </ScrollView>
         )
     }
 }
