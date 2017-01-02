@@ -18,7 +18,9 @@ import {
     CardItem,
     Thumbnail,
     Picker,
-    H1, H2, H3,
+    H1,
+    H2,
+    H3,
     Image
 } from 'native-base';
 
@@ -70,11 +72,12 @@ export default class NativeBase extends Component {
                         flexDirection: 'column'
                     }}>
 
-                    <Text style={{
-                        color: 'blue', marginBottom: 10
-                    }} onPress={() => Linking.openURL('http://nativebase.io/docs/v0.5.13/getting-started')}>
-                        NativeBase library
-                    </Text>
+                        <Text style={{
+                            color: 'blue',
+                            marginBottom: 10
+                        }} onPress={() => Linking.openURL('http://nativebase.io/docs/v0.5.13/getting-started')}>
+                            NativeBase library
+                        </Text>
 
                         <View>
                             <Text>Buttons</Text>
@@ -142,11 +145,20 @@ export default class NativeBase extends Component {
                             <Item label="Elephants" value="key3"/>
                         </Picker>
                     </View>
-<View >
-                    <H1>Top level heading</H1>
-                    <H2>Sub heading</H2>
-                    <H3>Sub sub heading</H3>
-</View>
+                    <View >
+                        <H1>Top level heading</H1>
+                        <H2>Sub heading</H2>
+                        <H3>Sub sub heading</H3>
+                    </View>
+
+                    <View style={{marginTop: 10, flexDirection: "row"}}>
+                    <H3 style={{marginRight: 5}}>Icons:</H3>
+                        <Icon name='ios-home'/>
+                        <Icon name='ios-menu' style={{
+                            fontSize: 20,
+                            color: 'red'
+                        }}/>
+                    </View>
                     <View flex note="View block for the FAB button" style={{
                         marginBottom: 20
                     }}/>
