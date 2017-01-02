@@ -5,39 +5,12 @@ import {
     TouchableHighlight,
     Linking,
     ScrollView,
+    Platform,
     Image
 } from 'react-native';
-//import {styles} from '../styles'
+import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
 import {RaisedButton} from './../components/raisedButton';
-styles = {
-    textfield: {
-        height: 36, // have to do it on iOS
-        marginTop: 10
-    },
-    textfieldWithFloatingLabel: {
-        height: 36, // have to do it on iOS
-        marginTop: 10
-    },
-    view: {
-        backgroundColor: "#DDD"
-    },
-    viewInner: {
-        backgroundColor: "#AAA",
-        borderRadius: 8,
-        padding: 10,
-        margin: 4
-    },
-    toggleText: {
-        color: "#AAA"
-    },
-    toggleTextOn: {
-        color: "blue"
-    },
-    fg: {
-        flexGrow: 1
-    }
-}
 import {
     mdl,
     MKButton,
@@ -57,25 +30,60 @@ const theme = getTheme();
 export default class MaterialPart2 extends Component {
     constructor(props) {
         super(props);
+        this.state = ({collapsedCard: true, collapsedCardStyle: {}});
+        this._onIconClicked = this._onIconClicked.bind(this);
+        this._renderEllipsisText = this._renderEllipsisText.bind(this);
+        console.log(this.state)
     }
+
+    _onIconClicked() {
+        console.log("after click")
+        console.log(this.state)
+        this.setState({
+            collapsedCard: !this.state.collapsedCard
+        });
+        if (this.state.collapsedCard) {
+            this.setState({
+                collapsedCardStyle: {
+                    height: 20
+                }
+            });
+
+        } else {
+            this.setState({collapsedCardStyle: {height: 200}});
+        }
+
+        console.log(this.state)
+    }
+
+    _renderEllipsisText() {
+        if (this.state.collapsedCard) {
+            return (
+                <Text style={theme.cardContentStyle}>...</Text>
+            )
+        } else {
+            return (
+                <View></View>
+            );
+        }
+    }
+
     render() {
 
-        var base64Icon = 'http://www.getmdl.io/assets/demos/welcome_card.jpg';
+        var base64Icon = 'https://getmdl.io/assets/compindex_2x.png';
         var action = (
             <Text>
                 My action</Text>
         );
         var menu = (
             <MKIconToggle checked={true} onCheckedChange={this._onIconChecked} onPress={this._onIconClicked}>
-                <Text pointerEvents="none" style={styles.toggleTextOff}>Off</Text>
-                <Text state_checked={true} pointerEvents="none" style={[styles.toggleText, styles.toggleTextOn]}>On</Text>
+                <Text pointerEvents="none" style={styles.toggleTextOn}>Expand</Text>
+                <Text state_checked={true} pointerEvents="none" style={[styles.toggleText, styles.toggleTextOn]}>Collapse</Text>
             </MKIconToggle>
         );
 
         return (
-            <ScrollView style={{
-                flexGrow: 1
-            }}>
+            <ScrollView>
 
                 {/* this textbox is messed up in this version of RNMK?  */}
                 <View style={{
@@ -126,8 +134,39 @@ export default class MaterialPart2 extends Component {
                     </View>
                 </View>
 
-                
+                <View style={[styles.container, styles.viewInner]}>
+                    {/* Here the magic happens*/}
+                    <View style={theme.cardStyle}>
+                        <Image source={{
+                            uri: base64Icon
+                        }} style={theme.cardImageStyle}/>
+                        <Text style={theme.cardTitleStyle}>Card Sample</Text>
+                        <View // TextView padding not handled well on Android https://github.com/facebook/react-native/issues/3233
+                            style={{
+                            padding: 15
+                        }}>
+                            <Text style={[
+                                theme.cardContentStyle,
+                                this.state.collapsedCardStyle, {
+                                    padding: 0
+                                }
+                            ]}>
+                                Liquorice ice cream cake icing. Gummies gummies marshmallow caramels cookie candy canes chupa chups ice cream candy canes. Chocolate bar jelly pie tart powder topping halvah tootsie roll. Chocolate cake cake candy canes. Chocolate bar halvah sugar plum dragée apple pie bear claw gummies. Cotton candy tart powder lemon drops jujubes pastry dessert. Ice cream apple pie liquorice toffee powder tootsie roll cotton candy. Bonbon biscuit cupcake biscuit chocolate dessert. Wafer chupa chups wafer lemon drops apple pie sweet sugar plum dessert. Sweet roll bear claw toffee croissant topping powder pudding pudding ice cream. Dessert chocolate cake macaroon fruitcake. Cotton candy chocolate dragée fruitcake. Macaroon croissant fruitcake danish.
+                            </Text>
+                            {!this.state.collapsedCard && <Text>...</Text>}
+                        </View>
+                        <View style={theme.cardMenuStyle}>{menu}</View>
+                    </View>
+                </View>
+
+                <RaisedButton width={80} text="Home" style={{
+                    marginVertical: 40,
+                    marginLeft: 20
+                }} onPress={Actions.home}/>
             </ScrollView>
         )
     }
 }
+//
+// <Toggle hidden={!this.state.collapsedCart}>
+// <Text>...</Text></Toggle>

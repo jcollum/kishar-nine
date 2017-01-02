@@ -1,11 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import {View, Text, TouchableHighlight, Linking} from 'react-native';
-import {mdl, MKProgress, MKTextField} from 'react-native-material-kit';
+import {View, Text, TouchableHighlight, Linking,ScrollView} from 'react-native';
 import {styles} from '../styles'
 import {Actions} from 'react-native-router-flux';
 import {RaisedButton} from './../components/raisedButton';
 
-import {MKButton, MKColor, MKTouchable, TickView} from 'react-native-material-kit';
+import {MKButton, MKColor, MKTouchable, TickView,mdl, MKProgress, MKTextField} from 'react-native-material-kit';
 
 export default class Material extends Component {
     constructor(props) {
@@ -36,47 +35,42 @@ export default class Material extends Component {
 
     render() {
         return (
-            <View style={[styles.content]}>
-                <Text style={{
-                    color: 'blue'
-                }} onPress={() => Linking.openURL('https://github.com/xinthink/react-native-material-kit')}>
-                    RNMK Library (Github)
-                </Text>
+            <ScrollView>
+                <View style={[styles.viewInner, {marginTop: 8}]}>
+                    <Text style={{
+                        color: 'blue'
+                    }} onPress={() => Linking.openURL('https://github.com/xinthink/react-native-material-kit')}>
+                        RNMK Library (Github)
+                    </Text>
+                </View>
+                <View style={[styles.viewInner]}>
+                    <RaisedButton width={120} style={{
+                        marginVertical: 20
+                    }} backgroundColor={MKColor.Orange} text="Orange Button"/>
+                </View>
+                <View style={[styles.viewInner]}>
+                    <Text style={{
+                        marginTop: 20,
+                        marginBottom: 10
+                    }}>Spinners & Progress</Text>
 
-                <RaisedButton width={120} style={{
-                    marginVertical: 20
-                }} backgroundColor={MKColor.Orange} text="Orange Button"/>
+                    <MKProgress.Indeterminate style={{
+                        backgroundColor: MKColor.Grey
+                    }} progressColor="#222" progress={0.5}/>
 
-                <Text style={{
-                    marginTop: 20,
-                    marginBottom: 10
-                }}>Spinners & Progress</Text>
+                    <MKProgress ref="progBarWithBuffer" style={{
+                        marginTop: 20
+                    }} progress={0.0} buffer={0.0}/>
 
-                <MKProgress.Indeterminate style={{
-                    backgroundColor: MKColor.Grey
-                }} progressColor="#222" progress={0.5}/>
-
-                <MKProgress ref="progBarWithBuffer" style={{
-                    marginTop: 20
-                }} progress={0.0} buffer={0.0}/>
-
-                <mdl.Spinner style={{
-                    marginVertical: 20
-                }}/>
-
-                <Text style={{
-                    marginTop: 20,
-                    marginBottom: 10
-                }}>Text Field</Text>
-
-                <MKTextField tintColor={MKColor.Lime} textInputStyle={{
-                    color: MKColor.Orange
-                }} placeholder="Text…" style={styles.textfield}/>
+                    <mdl.Spinner style={{
+                        marginVertical: 20
+                    }}/>
+                </View>
 
                 <RaisedButton width={80} text="Home" style={{
-                    marginTop: 40
+                    marginTop: 40, marginLeft: 20
                 }} onPress={Actions.home}/>
-            </View>
+          </ScrollView>
         )
     }
 }
