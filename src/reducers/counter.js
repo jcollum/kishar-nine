@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action = {}) {
-    console.log("accessing counter reducer function...");
+
     switch (action.type) {
         case actions.increment:
             console.log("+ reducer");
