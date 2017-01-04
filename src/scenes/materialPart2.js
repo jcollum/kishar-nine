@@ -33,12 +33,9 @@ export default class MaterialPart2 extends Component {
         this.state = ({collapsedCard: true, collapsedCardStyle: {}});
         this._onIconClicked = this._onIconClicked.bind(this);
         this._renderEllipsisText = this._renderEllipsisText.bind(this);
-        console.log(this.state)
     }
 
     _onIconClicked() {
-        console.log("after click")
-        console.log(this.state)
         this.setState({
             collapsedCard: !this.state.collapsedCard
         });
@@ -52,8 +49,6 @@ export default class MaterialPart2 extends Component {
         } else {
             this.setState({collapsedCardStyle: {height: 200}});
         }
-
-        console.log(this.state)
     }
 
     _renderEllipsisText() {
