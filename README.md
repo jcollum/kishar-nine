@@ -1,8 +1,8 @@
 ## React Native Redux sample project
 
-This is a sample app intended to show the growth of an app as it adds complexity. It is not intended to demonstrate best practices since I am just learning the React Native ecosystem.
+This is a sample app intended to show the growth of an app as it adds complexity. It is not intended to demonstrate best practices since I am just learning the React Native ecosystem, therefore I don't know what they are.
 
-The app is organized into branches. Think layers of an onion, where each branch is a new layer with new stuff.
+The app is organized into branches.
 
 `00-basic-setup`: react native init, basic setup; file system and README files to explain what's in the folders
 
@@ -12,15 +12,17 @@ The app is organized into branches. Think layers of an onion, where each branch 
 
 `03-redux-counter`: brought redux and react-native-router-flux into the project, got counter working with redux
 
-`04-asynch-counter`: added asynch behavior into the counter, following this guide: http://redux.js.org/docs/advanced/AsyncActions.html
+`04-asynch-counter`: added asynch behavior into the counter, following this guide: http://redux.js.org/docs/advanced/AsyncActions.html`
 
-`05-testing`: added in Jest tests
+`05-testing`: added in Jest tests (these are not working, bug between Jest and RN 0.39)
 
 `06-material-elements`: added in some material samples
 
 `07-nativebase`: demonstrates use of native-base (http://nativebase.io/)
 
-`08-material-part2`: another set of material elements: toggles, switches, checkboxes and card    
+`08-material-part2`: another set of material elements: toggles, switches and checkboxes  
+
+`09-RN-039`: updated project to work in RN 0.39  
 
 ### Getting going
 1. clone the repo
